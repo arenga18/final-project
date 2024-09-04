@@ -9,7 +9,9 @@ const init = async () => {
   server.route({
     method: "GET",
     path: "/",
-    handler: () => {},
+    handler: (request, h) => {
+      const body = request.payload;
+    },
   });
 
   await server.start();
