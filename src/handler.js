@@ -85,7 +85,7 @@ const getAllBooksHandler = (request, h) => {
   const response = h.response({
     status: "success",
     data: {
-      mapBooks,
+      books: mapBooks,
     },
   });
   response.code(200);
@@ -158,7 +158,7 @@ const editBookByIdHandler = (request, h) => {
   }
 };
 
-const deleteBookById = (request, h) => {
+const deleteBookByIdHandler = (request, h) => {
   const { id } = request.params;
 
   const index = books.filter((n) => n.id === id);
@@ -186,4 +186,5 @@ module.exports = {
   getAllBooksHandler,
   getBookByIdHandler,
   editBookByIdHandler,
+  deleteBookByIdHandler,
 };
